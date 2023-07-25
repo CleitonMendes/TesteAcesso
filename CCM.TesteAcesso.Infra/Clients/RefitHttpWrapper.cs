@@ -27,7 +27,7 @@ namespace CCM.TesteAcesso.Infra.Clients
                 if (_retryPolicy != null)
                 {
                     _logger.LogInformation("Starting an API call with retry policy {@Method}", methodName);
-                    result = await _retryPolicy.ExecuteAsync(async () => await func());
+                    result = await _retryPolicy.ExecuteAsync(() => func());
                 }
                 else
                 {
@@ -40,7 +40,9 @@ namespace CCM.TesteAcesso.Infra.Clients
             }
             catch (ApiException ex)
             {
-                _logger.LogError(ex, "Error to call {@Method} {@StatusCode}", methodName, ex.StatusCode);
+                _logger.LogError(ex, "Error to call {@Method} to uri: {@Uri} response code: {@StatusCode}",
+                    methodName,
+                    ex.RequestMessage.RequestUri, ex.StatusCode);
                 return new RefitResult<T>(ex.Content, ex.StatusCode);
             }
             catch (Exception ex)

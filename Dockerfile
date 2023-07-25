@@ -11,6 +11,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["CCM.TesteAcesso.API/CCM.TesteAcesso.API.csproj", "CCM.TesteAcesso.API/"]
+COPY ["CCM.TesteAcesso.Application/CCM.TesteAcesso.Application.csproj", "CCM.TesteAcesso.Application/"]
+COPY ["CCM.TesteAcesso.Domain/CCM.TesteAcesso.Domain.csproj", "CCM.TesteAcesso.Domain/"]
+COPY ["CCM.TesteAcesso.Infra/CCM.TesteAcesso.Infra.csproj", "CCM.TesteAcesso.Infra/"]
 RUN dotnet restore "CCM.TesteAcesso.API/CCM.TesteAcesso.API.csproj"
 COPY . .
 WORKDIR "/src/CCM.TesteAcesso.API"

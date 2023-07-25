@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCM.TesteAcesso.API", "CCM.TesteAcesso.API\CCM.TesteAcesso.API.csproj", "{E37658CB-6ACD-40CA-8F5A-C13316AC5B3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCM.TesteAcesso.API", "CCM.TesteAcesso.API\CCM.TesteAcesso.API.csproj", "{E37658CB-6ACD-40CA-8F5A-C13316AC5B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCM.TesteAcesso.Application", "CCM.TesteAcesso.Application\CCM.TesteAcesso.Application.csproj", "{46073DCB-470A-4EC0-B6B5-F589A9E906E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCM.TesteAcesso.Application", "CCM.TesteAcesso.Application\CCM.TesteAcesso.Application.csproj", "{46073DCB-470A-4EC0-B6B5-F589A9E906E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCM.TesteAcesso.Domain", "CCM.TesteAcesso.Domain\CCM.TesteAcesso.Domain.csproj", "{3B5CBD33-3594-4BE7-9591-FAE4F0C9AA6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCM.TesteAcesso.Domain", "CCM.TesteAcesso.Domain\CCM.TesteAcesso.Domain.csproj", "{3B5CBD33-3594-4BE7-9591-FAE4F0C9AA6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCM.TesteAcesso.Infra", "CCM.TesteAcesso.Infra\CCM.TesteAcesso.Infra.csproj", "{2985E39F-F541-4FCC-997A-5099064D587A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCM.TesteAcesso.Infra", "CCM.TesteAcesso.Infra\CCM.TesteAcesso.Infra.csproj", "{2985E39F-F541-4FCC-997A-5099064D587A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

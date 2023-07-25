@@ -7,7 +7,7 @@ namespace CCM.TesteAcesso.Infra.Clients.Account
     public interface IAccountClient
     {
         [Post(@"​/Account")]
-        Task<ApiResponse<string>> Post([Body] AccountRequest request);
+        Task<AccountPostResponse> Post([Body] AccountRequest request);
 
         [Get(@"/Account/{accountNumber}")]
         Task<AccountResponse> GetByAccount(string accountNumber);

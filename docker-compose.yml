@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root 
+      POSTGRES_PASSWORD: cmdevlocal
+    volumes:
+      - postgresdata:/var/lib/postgresql/data 
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - '5671:5671'
+      - '5672:5672'
+      - '15672:15672'
+    restart: unless-stopped
+    container_name: rabbitmq
+    volumes:
+      - rabbitmqdata:/var/lib/rabbitmq
+    networks:
+      - backend
+
+  testacesso:
+    image: baldini/testacesso
+    restart: always
+    ports:
+      - "5000:80"
+    networks:
+      - backend
+   
+
+  ccm.testeacesso.api:
+    image: ${DOCKER_REGISTRY-}ccmtesteacessoapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+     - ASPNETCORE_ENVIRONMENT=Development
+     - POSTGRES_CONNECTION_STRING=Host=postgres;Port=5432;Database=acesso-test;Username=root;Password=cmdevlocal;CommandTimeout=120;
+    ports:
+      - "5001:80"
+    networks:
+      - backend
+      
+volumes:
+  postgresdata:
+  rabbitmqdata:
+
+
+networks:
+  backend:
+   driver: bridge
