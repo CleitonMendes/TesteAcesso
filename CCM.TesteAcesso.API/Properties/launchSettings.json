@@ -1,0 +1,23 @@
+{
+  "profiles": {
+    "CCM.TesteAcesso.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "POSTGRES_CONNECTION_STRING": "Host=localhost;Port=5432;Database=acesso-test;Username=root;Password=cmdevlocal;CommandTimeout=120;"
+
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7085;http://localhost:5166"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  }
+}
